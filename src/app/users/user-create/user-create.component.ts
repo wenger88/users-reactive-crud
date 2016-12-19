@@ -16,7 +16,7 @@ import {error} from "util";
 
 export class UserCreateComponent implements OnInit{
 
-    user: User;
+    user = <User>{};
     userForm: FormGroup;
     address: FormArray;
     postToServer: string;
