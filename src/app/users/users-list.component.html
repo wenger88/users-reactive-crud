@@ -1,0 +1,19 @@
+
+<div class="container">
+
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let user of users">
+            <h2>{{user.name}}</h2>
+            <span style="width: 33%; display: inline-block">Email: {{user.email}}</span>
+            <span style="width: 33%; display: inline-block">Phone: {{user.phone}}</span>
+            <span style="width: 33%; display: inline-block">
+                <button type="button" class="btn btn-outline-primary float-sm-right" [routerLink]="['/user-details', user.id]">Details</button>
+            </span>
+        </li>
+    </ul>
+
+    <button type="button" class="btn-outline-primary btn" [routerLink]="['/create']">
+        Add User
+    </button>
+
+</div>

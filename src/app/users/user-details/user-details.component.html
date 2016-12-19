@@ -1,0 +1,19 @@
+
+
+<div class="container" *ngIf="user">
+    <h2>{{user.name}}</h2>
+    <p>Username: {{user.username}}</p>
+    <p>Email: {{user.email}}</p>
+    <p>Phone: {{user.phone}}</p>
+
+    <div *ngFor="let addr of user.address">
+        <p>Address</p>
+        <p>Street: {{addr.street}}</p>
+        <p>Suite: {{addr.suite}}</p>
+        <p>City: {{addr.city}}</p>
+        <p>Zip: {{addr.zipcode}}</p>
+    </div>
+
+    <button type="button" class="btn btn-primary" [routerLink]="['/user-edit', user.id]">Edit</button>
+    <button type="button" class="btn btn-danger">Delete</button>
+</div>

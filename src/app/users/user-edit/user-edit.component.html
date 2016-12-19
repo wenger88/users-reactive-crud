@@ -1,0 +1,49 @@
+
+<div class="container" *ngIf="user">
+
+    <div class="col-md-8 push-md-2">
+        <form [formGroup]="userForm" novalidate (ngSubmit)="onSubmit()">
+            <div class="input-group">
+                <label>Name</label>
+                <input type="text" class="form-control" formControlName="name">
+            </div>
+            <div class="input-group">
+                <label>Email</label>
+                <input type="text" class="form-control" formControlName="email">
+            </div>
+            <div class="input-group">
+                <label>Phone</label>
+                <input type="text" class="form-control" formControlName="phone">
+            </div>
+            <p>Address</p>
+            <div formArrayName="address">
+                <div *ngFor="let addr of address.controls; let i = index" [formGroupName]="i">
+                    <div class="input-group">
+                        <label>Street</label>
+                        <input type="text" class="form-control" formControlName="street">
+                    </div>
+                    <div class="input-group">
+                        <label>Suite</label>
+                        <input type="text" class="form-control" formControlName="suite">
+                    </div>
+                    <div class="input-group">
+                        <label>City</label>
+                        <input type="text" class="form-control" formControlName="city">
+                    </div>
+                    <div class="input-group">
+                        <label>zipcode</label>
+                        <input type="text" class="form-control" formControlName="zipcode">
+                    </div>
+                </div>
+                <button type="button" (click)="addAddress()" class="btn btn-outline-primary">Add Address</button>
+            </div>
+            {{userForm.value | json}}
+
+            <div>
+                <button type="submit" class="btn btn-outline-primary" >Save</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>
