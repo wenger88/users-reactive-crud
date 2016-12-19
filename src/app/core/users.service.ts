@@ -44,6 +44,11 @@ export class UsersService {
             .catch(this.handleError)
     }
 
+    deleteUser(id: number){
+        return this.http.delete(this.url + '/' + id)
+            .catch(this.handleError)
+    }
+
 
     private handleError(error: Response) {
         return Observable.throw(error || 'Server error');

@@ -15,5 +15,5 @@
     </div>
 
     <button type="button" class="btn btn-primary" [routerLink]="['/user-edit', user.id]">Edit</button>
-    <button type="button" class="btn btn-danger">Delete</button>
+    <button type="button" class="btn btn-danger" (click)="onDelete()">Delete</button>
 </div>

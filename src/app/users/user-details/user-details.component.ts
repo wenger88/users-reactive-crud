@@ -28,4 +28,11 @@ export class UserDetailsComponent implements OnInit{
         })
 
     }
+
+    onDelete(){
+        this.dataService.deleteUser(this.user.id)
+            .subscribe((user) => {
+                this.router.navigate(['/users'])
+            })
+    }
 }
